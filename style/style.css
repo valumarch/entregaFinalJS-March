@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Lato&family=Poppins&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #faedcd;
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #EEF5DB;
+    font-family: "Poppins", sans-serif;
+}
+
+.header {
+    background-color: #D4A373;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    text-align: center;
+}
+
+.header h1{
+    font-size: 2.7rem;
+    color:#faedcd;
+    font-family: 'Homemade Apple', 'Poppins', sans-serif;
+    padding: 20px;
+}
+
+
+/* PRODUCTOS */
+
+.contenedor-productos {
+    padding-top: 170px;
+    padding-bottom: 50px;
+    display: grid;
+}
+
+
+@media all and (min-width: 700px){
+    .contenedor-productos{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media all and (min-width: 1000px){
+    .contenedor-productos{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.producto {
+    border: solid 1px #D4A373;
+    height: 400px;
+    max-width: 275px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.producto h3 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.producto button {
+    border: none;
+    padding: 7px;
+    color: white;
+    background-color: #D4A373;
+    text-align: center;
+    cursor: pointer;
+    width: 70%;
+    font-size: 15px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.precio-producto {
+    font-size: 20px;
+}
+
+.producto button:hover {
+    opacity: 0.7;
+}
+
+.producto img {
+    width: 100%;
+    top: 0;
+    margin-bottom: 15px;
+    border-bottom: solid 1px #D4A373;
+}
+
+
+
+
+/* CARRITO */
+
+.sidebar{
+    padding-top: 170px;
+    position: fixed;
+    background-color: #faedcd;
+    border: solid 2px #D4A373;
+    color: #000;
+    width: 80%;
+    height: 90%;
+    top: -100%;
+    transition: all 700ms linear;
+    margin-left: 10%;
+    overflow: scroll;
+    text-align: center;
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar.active{
+    top: 0;
+    box-shadow: -1px -1px 30px 1px rgba(212,163,115,0.82);
+-webkit-box-shadow: -1px -1px 30px 1px rgba(212,163,115,0.82);
+-moz-box-shadow: -1px -1px 30px 1px rgba(212,163,115,0.82);
+
+}
+
+.sidebar ul{
+    list-style: none;
+    text-align: center;
+}
+
+.abrir-carrito{
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    padding-right: 15px;
+    margin-top: -70px;
+}
+
+.abrir-carrito img{
+    width: 35px;
+}
+.abrir-carrito span{
+    margin-left: 100px;
+}
+
+.icono-carrito{
+    margin-right: -100px;
+    margin-left: 15px;
+    margin-top:15px;
+}
+
+.sidebar h2{
+    text-transform: uppercase;
+    margin-top: -35px;
+    padding: 20px;
+    color: #D4A373;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+
+
+.contenido-carrito{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-content: center;
+    align-items: center;
+}
+
+.cantidad-producto{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.restar{
+    margin-right: 10px;
+}
+.sumar{
+    margin-left: 10px;
+}
+.restar,.sumar{
+    color: #D4A373;
+    font-weight: bold;
+    font-size: large;
+}
+
+.restar, .sumar, .boton-eliminar{
+    cursor: pointer;
+}
+
+.botones-carrito{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.boton-comprar{
+    background-color: #fff;
+    color: #D4A373;
+    border: solid 3px #faedcd;
+    text-transform: uppercase;
+    font-size: 20px;
+    width: 200px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.boton-vaciar{
+    background-color: #faedcd;
+    color: #000;
+    border: none;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.boton-comprar:hover,.boton-vaciar:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.eliminar-producto{
+    cursor: pointer;
+}
+
+.total-compra{
+    padding-top: 20px;
+    text-transform: uppercase;
+    font-size: large;
+    color: #D4A373;
+}
+
+.carrito-vacio {
+    text-transform: uppercase;
+    margin: 20px;
+}
+
+.carrito-vacio img{
+    padding: 0 10px;
+    
+}

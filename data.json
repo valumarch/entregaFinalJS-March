@@ -1,0 +1,86 @@
+[{
+    "nombre": "Piluso Flores",
+    "precio": 1500,
+    "id": "piluso-flores",
+    "imagen": "./img/img-producto1.jpg",
+    "cantidad": 1
+
+},
+{
+    "nombre": "Almohadon Lila",
+    "precio": 2000,
+    "id": "almohadon-lila",
+    "imagen": "./img/img-producto2.jpg",
+    "cantidad": 1
+},
+{
+    "nombre": "Remera negra",
+    "precio": 5000,
+    "id": "remera-01",
+    "imagen": "./img/img-producto3.jpeg",
+    "cantidad": 1
+},
+{
+    "nombre": "Almohadon Rosa",
+    "precio": 3000,
+    "id": "almohadon-rosa",
+    "imagen": "./img/img-producto4.jpg",
+    "cantidad": 1
+},
+{
+    "nombre": "Sweater Ondas",
+    "precio": 3500,
+    "id": "sweater-ondas",
+    "imagen": "../img/img-producto5.jpg",
+    "cantidad": 1
+},
+{
+    "nombre": "Sweater Cuadros",
+    "precio": 3500,
+    "id": "sweater-cuadros",
+    "imagen": "../img/img-producto6.jpg",
+    "cantidad": 1
+},
+{
+    "nombre": "Remera violeta",
+    "precio": 5000,
+    "id": "remera-02",
+    "imagen": "../img/img-producto7.jpeg",
+    "cantidad": 1
+},
+{
+    "nombre": "Remera roja",
+    "precio": 5000,
+    "id": "remera-03",
+    "imagen": "../img/img-producto8.jpeg",
+    "cantidad": 1
+},
+{
+    "nombre": "Poncho",
+    "precio": 8000,
+    "id": "poncho",
+    "imagen": "../img/img-producto9.jpg",
+    "cantidad": 1
+},
+{
+    "nombre": "Saco Granny",
+    "precio": 10000,
+    "id": "saco-granny",
+    "imagen": "../img/img-producto10.jpg",
+    "cantidad": 1
+},
+{
+    "nombre": "Bufanda",
+    "precio": 2500,
+    "id": "bufanda",
+    "imagen": "../img/img-producto11.jpg",
+    "cantidad": 1
+},
+{
+    "nombre": "Guantes",
+    "precio": 2000,
+    "id": "guantes",
+    "imagen": "../img/img-producto12.jpg",
+    "cantidad": 1
+}
+]
