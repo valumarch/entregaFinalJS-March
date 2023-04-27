@@ -31,8 +31,8 @@ const buscarProductos = async () => {
             position: 'top-end',
             toast: true,
             icon: 'success',
-            iconColor: '#D4A373',
-            color: '#D4A373',
+            iconColor: '#381D2A',
+            color: '#381D2A',
             title: 'Se agregó un producto al carrito',
             showConfirmButton: false,
             timer: 1500
@@ -199,14 +199,10 @@ botonVaciar.addEventListener("click", () =>{
     });
     Swal.fire({
         position: 'center',
-        imageUrl: 'https://www.iconpacks.net/icons/2/free-sad-face-icon-2691-thumb.png',
-        imageWidth: 100,
-        imageHeight: 100,
-        imageAlt: 'Custom image',
         title: 'Su carrito está vacio',
         background: '#EEF5DB',
-        iconColor: '#D4A373',
-        color: '#D4A373',
+        iconColor: '#381D2A',
+        color: '#381D2A',
         showConfirmButton: false,
         timer: 1500
     });
@@ -220,8 +216,8 @@ botonComprar.addEventListener("click", () =>{
         title: 'Su compra ha sido realizada',
         text: 'Muchas gracias!',
         background: '#EEF5DB',
-        iconColor: '#D4A373',
-        color: '#D4A373',
+        iconColor: '#381D2A',
+        color: '#381D2A',
         showConfirmButton: false,
         timer: 1500
     });
@@ -232,8 +228,8 @@ botonComprar.addEventListener("click", () =>{
             title: 'Su carrito está vacio',
             text: 'Para comprar agregue productos al carrito',
             background: '#EEF5DB',
-            iconColor: '#D4A373',
-            color: '#D4A373',
+            iconColor: '#381D2A',
+            color: '#381D2A',
             showConfirmButton: false,
             timer: 1500
         });
