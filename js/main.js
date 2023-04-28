@@ -96,7 +96,7 @@ const armarCarrito = () =>{
         <span class="sumar botones-carrito"> + </span> 
         </div>
         <p class="carrito-subtotal">Subtotal: $${producto.cantidad * producto.precio}</p>
-        <img src="../img/trash3.svg" id="${producto.id}" class="boton-eliminar botones-carrito">
+        <img src="../img/trash3.png" id="${producto.id}" class="boton-eliminar botones-carrito">
         `;
         productosCarrito.append(contenidoCarrito);
 
@@ -131,9 +131,8 @@ const armarCarrito = () =>{
         let carritoVacio = document.createElement("p");
         carritoVacio.className = "carrito-vacio";
         carritoVacio.innerHTML = `
-        <img src="../img/emoji-triste.svg" alt="emoji de cara triste">
+        <img src="../img/emoji-triste.png" alt="emoji de cara triste" class="emoji-triste">
         Tu carrito está vacio
-        <img src="../img/emoji-triste.svg" alt="emoji de cara triste">
         `;
         productosCarrito.append(carritoVacio);
     }
