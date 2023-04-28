@@ -1,9 +1,21 @@
-const contenedorProductos = document.getElementById("contenedor-productos");
-const abrirCarrito = document.getElementById("abrir-carrito");
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
+//body
+const contenedorProductos = document.getElementById("contenedor-productos");
+const abrirCarrito = document.getElementById("abrir-carrito");
 
-// cargar productos, crear cards, agregar al carrito 
+//carrito
+const carritoAbierto = document.getElementById("sidebar");
+const productosCarrito = document.getElementById("productos-carrito");
+const carritoLleno = document.getElementById("carrito-lleno");
+const sidebarCarrito = document.getElementById("abrir-carrito");
+const carritoVacio = document.getElementById("carrito-vacio");
+const cantidadCarrito = document.getElementById("cantidad");
+const botonVaciar = document.getElementById("boton-vaciar");
+const botonComprar = document.getElementById("boton-comprar");
+
+
+// cargar productos, crear cards
 
 const buscarProductos = async () => {
     const response = await fetch("data.json");
@@ -30,6 +42,7 @@ const buscarProductos = async () => {
         Swal.fire({
             position: 'top-end',
             toast: true,
+            background: '#F8F6F3',
             icon: 'success',
             iconColor: '#381D2A',
             color: '#381D2A',
@@ -61,19 +74,12 @@ const buscarProductos = async () => {
         armarCarrito();
     });
 })
-
 }
 
 buscarProductos();
 
 
 // carrito 
-
-const productosCarrito = document.getElementById("productos-carrito");
-const carritoLleno = document.getElementById("carrito-lleno");
-const sidebarCarrito = document.getElementById("abrir-carrito");
-const carritoVacio = document.getElementById("carrito-vacio");
-
 
 const armarCarrito = () =>{
     if(carrito.length>0){
@@ -85,12 +91,12 @@ const armarCarrito = () =>{
         <h3 class="carrito-nombre">${producto.nombre}</h3>
         <p class="carrito-precio">$${producto.precio}</p>
         <div class="cantidad-producto">
-        <span class="restar"> - </span>
+        <span class="restar botones-carrito"> - </span>
         <p>${producto.cantidad}</p>
-        <span class="sumar"> + </span> 
+        <span class="sumar botones-carrito"> + </span> 
         </div>
         <p class="carrito-subtotal">Subtotal: $${producto.cantidad * producto.precio}</p>
-        <img src="../img/trash3.svg" id="${producto.id}" class="boton-eliminar">
+        <img src="../img/trash3.svg" id="${producto.id}" class="boton-eliminar botones-carrito">
         `;
         productosCarrito.append(contenidoCarrito);
 
@@ -118,6 +124,7 @@ const armarCarrito = () =>{
         botonEliminar.addEventListener("click", () => {
             eliminarProducto(producto.id);
         })
+        
     });
     }else{
         productosCarrito.innerHTML= "";
@@ -131,9 +138,6 @@ const armarCarrito = () =>{
         productosCarrito.append(carritoVacio);
     }
     
-
-   
-
     const precioTotal = carrito.reduce((acc, el) => acc + el.precio*el.cantidad, 0);
 
     let totalCompra = document.createElement("div");
@@ -141,7 +145,7 @@ const armarCarrito = () =>{
     totalCompra.innerHTML = `<p>Total: $${precioTotal}`;
     productosCarrito.append(totalCompra);
 
-
+    
 };
 
 armarCarrito();
@@ -156,12 +160,10 @@ const eliminarProducto = () => {
     carritoLS();
     armarCarrito();
     contadorCarrito();
-
-}
+};
 
 // cantidad en carrito
 
-const cantidadCarrito = document.getElementById("cantidad");
 
 const contadorCarrito = () => {
     let numeroProductos = carrito.reduce((acc, producto) => acc + producto.cantidad, 0);
@@ -183,15 +185,16 @@ localStorage.setItem("carrito", JSON.stringify(carrito));
 };
 
 
+// abrir y cerrar el carrito
+
+
+
 sidebarCarrito.addEventListener("click", ()=>{
     document.getElementById("sidebar").classList.toggle("active");
 });
 
 
 //vaciar y comprar carrito
-
-const botonVaciar = document.getElementById("boton-vaciar");
-const botonComprar = document.getElementById("boton-comprar");
 
 botonVaciar.addEventListener("click", () =>{
     carrito.forEach((producto)=>{
@@ -200,7 +203,7 @@ botonVaciar.addEventListener("click", () =>{
     Swal.fire({
         position: 'center',
         title: 'Su carrito está vacio',
-        background: '#EEF5DB',
+        background: '#F8F6F3',
         iconColor: '#381D2A',
         color: '#381D2A',
         showConfirmButton: false,
@@ -215,7 +218,7 @@ botonComprar.addEventListener("click", () =>{
         icon: 'success',
         title: 'Su compra ha sido realizada',
         text: 'Muchas gracias!',
-        background: '#EEF5DB',
+        background: '#F8F6F3',
         iconColor: '#381D2A',
         color: '#381D2A',
         showConfirmButton: false,
@@ -227,7 +230,7 @@ botonComprar.addEventListener("click", () =>{
             icon: 'error',
             title: 'Su carrito está vacio',
             text: 'Para comprar agregue productos al carrito',
-            background: '#EEF5DB',
+            background: '#F8F6F3',
             iconColor: '#381D2A',
             color: '#381D2A',
             showConfirmButton: false,
